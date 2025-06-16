@@ -41,10 +41,15 @@
     },
     methods: {
       handleLogin() {
-        // Aqui você implementaria a lógica de login
-        console.log('Login com:', this.email, this.password);
-        // Simulação: redirecionar após login
-        this.$router.push('/dashboard');
+        // Simulação de autenticação
+        if (this.email && this.password) {
+          // Salvar token no localStorage para simular autenticação
+          localStorage.setItem('token', 'dummy-token')
+          // Redirecionar para o dashboard
+          this.$router.push('/dashboard')
+        } else {
+          alert('Por favor, preencha todos os campos')
+        }
       }
     }
   }
